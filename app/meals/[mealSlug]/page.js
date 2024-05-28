@@ -1,7 +1,7 @@
 import React from "react";
 
 const mealDetailPage = ({ params }) => {
-  return <div>{params.mealSlug}</div>;
+  return <h1>Menu Details</h1>;
 };
 
 export default mealDetailPage;
