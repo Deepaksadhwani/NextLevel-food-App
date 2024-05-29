@@ -9,9 +9,13 @@ import macnCheeseImage from "../../../public/images/macncheese.jpg";
 import pizzaImage from "../../../public/images/pizza.jpg";
 import schnitzelImage from "../../../public/images/schnitzel.jpg";
 import tomatoSaladImage from "../../../public/images/tomato-salad.jpg";
+import { notFound } from "next/navigation";
 
 const mealDetailPage = ({ params }) => {
   const meal = getMeal(params.mealSlug);
+  if (!meal) {
+    notFound();
+  }
   const imageSource =
     meal.image === "/images/burger.jpg"
       ? burgerImage
